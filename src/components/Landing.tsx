@@ -1,39 +1,40 @@
 'use client';
 import { motion } from 'framer-motion';
 import React from 'react';
-import { Button } from '~/components/ui/button';
+
 
 const Landing: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-black text-white space-y-6">
       
-      {/* Hello Message */}
       <div className="flex items-center space-x-2">
+        <motion.span initial={{ y: -250 }}
+          animate={{ y: 0 }} 
+          transition={{ delay: 0.2, type: 'spring', stiffness: 150 }} 
+          className="px-4 py-0.5 bg-[#FBBF24] text-lg rounded-full">Ciao !
+        </motion.span>
         <motion.h2 
           initial={{ y: -250 }}
           animate={{ y: 0 }} 
           transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
           className="text-gray-400 text-lg"
         >
-          Hello, I'm Aditya
+          I'm Aditya Supare
         </motion.h2>
-        <motion.span initial={{ y: -250 }}
-          animate={{ y: 0 }} 
-          transition={{ delay: 0.2, type: 'spring', stiffness: 150 }} 
-          className="px-2 py-1 bg-pink-500 text-md rounded-full">3D-Art</motion.span>
       </div>
 
       <div className="text-center">
         <motion.h1
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7 }}
+          transition={{ delay: 0.7, duration:1.7 }}
           className="text-5xl font-semibold md:text-6xl lg:text-8xl"
         >
-          <span style={{ color: '#A78BFA' }}>DIGITAL</span> <br />
-          <span style={{ color: '#FBBF24' }}>EXPERIENCE</span> <br />
-          <span style={{ color: '#D1D5DB' }}>DESIGNER</span> &{' '}
-          <span style={{ color: '#5EEAD4' }}>DEVELOPER</span>
+          <span style={{ color: '#a04fe7' }}>DIGITAL</span> <br />
+          <span style={{ color: '#dcc258', marginLeft: '70px'  }}>EXPERIENCE</span> <br />
+          <span style={{ color: '#dcdbc8 ', marginRight: '150px'  }}>DESIGNER</span> <br />
+          <span style={{ color: '#dcdbc8',marginLeft: '60px' }}>&</span>{' '}
+          <span style={{ color: '#58dcbe' }}>DEVELOPER</span>
         </motion.h1>
       </div>
 
@@ -56,19 +57,20 @@ const Landing: React.FC = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             whileDrag={{ scale: 0.9, rotate: 10 }}
-            drag
+            drag 
+            dragConstraints = {{left: -400, right: 400, top:-500, bottom:0}}
           >
-            <button className="px-8 py-2 border border-black bg-transparent text-black  dark:border-white relative group transition duration-200">
-            <div className="absolute -bottom-2 -right-2 bg-[#FBBF24] h-full w-full -z-10 group-hover:bottom-0 group-hover:right-0 transition-all duration-200" />
+            <motion.button initial={{opacity:0}} animate={{opacity:1}} transition={{delay:1, duration:2}} className="px-8 py-2 border border-black bg-transparent text-black dark:border-white relative group transition duration-200">
+            <div className="absolute -bottom-2 -right-2 bg-[#dbba39] h-full w-full -z-10 group-hover:bottom-0 group-hover:right-0 transition-all duration-200" />
             <span className="relative">
-             Let&apos;s connect
+             Let&apos;s Connect
             </span>
-        </button>
+        </motion.button>
           </motion.div>
         </motion.div>
       </div>
 
-      {/* Description */}
+
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
