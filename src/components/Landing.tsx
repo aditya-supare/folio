@@ -58,7 +58,7 @@ const Landing: React.FC = () => {
             whileTap={{ scale: 0.95 }}
             whileDrag={{ scale: 0.9, rotate: 10 }}
             drag 
-            dragConstraints = {{left: -400, right: 400, top:-500, bottom:0}}
+            dragConstraints = {{left: 0, right: 0, top:-0, bottom:0}}
           >
             <motion.button initial={{opacity:0}} animate={{opacity:1}} transition={{delay:1, duration:2}} className="px-8 py-2 border border-black bg-transparent text-black dark:border-white relative group transition duration-200">
             <div className="absolute -bottom-2 -right-2 bg-[#dbba39] h-full w-full -z-10 group-hover:bottom-0 group-hover:right-0 transition-all duration-200" />
