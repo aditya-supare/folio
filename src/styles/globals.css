@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    /* Setting a direct off-black color for the background */
+    background-color: #1a1a1a; /* Use a slightly lighter black for an "off-black" effect */
+    color: #f4f4f5; /* Set the default text color to a light gray */
+  }
+
+  .dark body {
+    background-color: #1a1a1a; /* Same off-black background in dark mode */
+    color: #dce0f7; /* Adjust text color for dark mode */
+  }
+}
